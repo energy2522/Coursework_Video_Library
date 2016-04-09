@@ -1,0 +1,301 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{2885F9BB-56DA-44EA-9E3E-C90B400850D6}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Video_Library</RootNamespace>
+    <AssemblyName>Video_Library</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Menu\Babys.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Menu\Babys.Designer.cs">
+      <DependentUpon>Babys.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Menu\Fantastic.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Menu\Fantastic.Designer.cs">
+      <DependentUpon>Fantastic.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Menu\Fantasy.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Menu\Fantasy.Designer.cs">
+      <DependentUpon>Fantasy.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Menu\Horror.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Menu\Horror.Designer.cs">
+      <DependentUpon>Horror.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Menu\Adventure.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Menu\Adventure.Designer.cs">
+      <DependentUpon>Adventure.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Menu\Family.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Menu\Family.Designer.cs">
+      <DependentUpon>Family.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Menu\Cartoons.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Menu\Cartoons.Designer.cs">
+      <DependentUpon>Cartoons.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Menu\Crime.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Menu\Crime.Designer.cs">
+      <DependentUpon>Crime.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Menu\Melodrama.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Menu\Melodrama.Designer.cs">
+      <DependentUpon>Melodrama.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Menu\Comedy.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Menu\Comedy.Designer.cs">
+      <DependentUpon>Comedy.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Menu\History.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Menu\History.Designer.cs">
+      <DependentUpon>History.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Menu\Documentary.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Menu\Documentary.Designer.cs">
+      <DependentUpon>Documentary.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Menu\Drama.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Menu\Drama.Designer.cs">
+      <DependentUpon>Drama.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Menu\Detectives.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Menu\Detectives.Designer.cs">
+      <DependentUpon>Detectives.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Menu\Biographies.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Menu\Biographies.Designer.cs">
+      <DependentUpon>Biographies.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Menu\Militants.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Menu\Militants.Designer.cs">
+      <DependentUpon>Militants.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Menu\Military.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Menu\Military.Designer.cs">
+      <DependentUpon>Military.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Menu\Musicals.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Menu\Musicals.Designer.cs">
+      <DependentUpon>Musicals.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Registration.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Registration.Designer.cs">
+      <DependentUpon>Registration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Menu\Series.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Menu\Series.Designer.cs">
+      <DependentUpon>Series.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SignIn.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SignIn.Designer.cs">
+      <DependentUpon>SignIn.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Menu\Westerns.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Menu\Westerns.Designer.cs">
+      <DependentUpon>Westerns.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Menu\Sports.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Menu\Sports.Designer.cs">
+      <DependentUpon>Sports.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Menu\Thriller.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Menu\Thriller.Designer.cs">
+      <DependentUpon>Thriller.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Menu\Babys.resx">
+      <DependentUpon>Babys.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Menu\Adventure.resx">
+      <DependentUpon>Adventure.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Menu\Biographies.resx">
+      <DependentUpon>Biographies.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Menu\Cartoons.resx">
+      <DependentUpon>Cartoons.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Menu\Comedy.resx">
+      <DependentUpon>Comedy.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Menu\Crime.resx">
+      <DependentUpon>Crime.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Menu\Detectives.resx">
+      <DependentUpon>Detectives.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Menu\Documentary.resx">
+      <DependentUpon>Documentary.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Menu\Drama.resx">
+      <DependentUpon>Drama.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Menu\Family.resx">
+      <DependentUpon>Family.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Menu\Fantastic.resx">
+      <DependentUpon>Fantastic.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Menu\Fantasy.resx">
+      <DependentUpon>Fantasy.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Menu\History.resx">
+      <DependentUpon>History.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Menu\Horror.resx">
+      <DependentUpon>Horror.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Menu\Melodrama.resx">
+      <DependentUpon>Melodrama.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Menu\Militants.resx">
+      <DependentUpon>Militants.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Menu\Military.resx">
+      <DependentUpon>Military.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Menu\Musicals.resx">
+      <DependentUpon>Musicals.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Menu\Series.resx">
+      <DependentUpon>Series.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Menu\Sports.resx">
+      <DependentUpon>Sports.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Menu\Thriller.resx">
+      <DependentUpon>Thriller.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Menu\Westerns.resx">
+      <DependentUpon>Westerns.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
