@@ -38,8 +38,8 @@
             this.Name = "Thriller";
             this.Text = "Триллеры";
             this.Load += new System.EventHandler(this.Thriller_Load);
-            this.Controls.SetChildIndex(this.Sign_in_button, 0);
-            this.Controls.SetChildIndex(this.Registration, 0);
+            //this.Controls.SetChildIndex(this.Sign_in_button, 0);
+            //this.Controls.SetChildIndex(this.Registration, 0);
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Video_Library
+namespace WindowsFormsApplication2
 {
     static class Program
     {
@@ -16,8 +16,7 @@ namespace Video_Library
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new SignIn());
-            
+            Application.Run(new Form1());
         }
     }
 }

@@ -38,8 +38,8 @@
             this.Name = "Drama";
             this.Text = "Драмы";
             this.Load += new System.EventHandler(this.Drama_Load);
-            this.Controls.SetChildIndex(this.Sign_in_button, 0);
-            this.Controls.SetChildIndex(this.Registration, 0);
+            //this.Controls.SetChildIndex(this.Sign_in_button, 0);
+            //this.Controls.SetChildIndex(this.Registration, 0);
             this.ResumeLayout(false);
             this.PerformLayout();
 

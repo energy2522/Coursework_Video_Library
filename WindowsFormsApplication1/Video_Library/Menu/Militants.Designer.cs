@@ -38,8 +38,8 @@
             this.Name = "Militants";
             this.Text = "Боевики";
             this.Load += new System.EventHandler(this.Militants_Load);
-            this.Controls.SetChildIndex(this.Sign_in_button, 0);
-            this.Controls.SetChildIndex(this.Registration, 0);
+            //this.Controls.SetChildIndex(this.Sign_in_button, 0);
+            //this.Controls.SetChildIndex(this.Registration, 0);
             this.ResumeLayout(false);
             this.PerformLayout();
 

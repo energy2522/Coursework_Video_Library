@@ -16,6 +16,9 @@ namespace Video_Library
         {
             InitializeComponent();
         }
+      //  SignIn ob = new SignIn();
+       // lable.Text = ob.n();
+        
 
         private void Registration_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
@@ -187,7 +190,7 @@ namespace Video_Library
 
         private void Main_Load(object sender, EventArgs e)
         {
-
+            
         }
     }
 }

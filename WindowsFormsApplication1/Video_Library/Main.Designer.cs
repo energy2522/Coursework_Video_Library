@@ -52,8 +52,7 @@
             this.фантатстикаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.фэнтезиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.сериалыToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.Sign_in_button = new System.Windows.Forms.LinkLabel();
-            this.Registration = new System.Windows.Forms.LinkLabel();
+            this.label = new System.Windows.Forms.LinkLabel();
             menuStrip1 = new System.Windows.Forms.MenuStrip();
             menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -269,36 +268,16 @@
             this.сериалыToolStripMenuItem.Text = "Сериалы";
             this.сериалыToolStripMenuItem.Click += new System.EventHandler(this.сериалыToolStripMenuItem_Click);
             // 
-            // Sign_in_button
+            // label
             // 
-            this.Sign_in_button.ActiveLinkColor = System.Drawing.Color.DarkBlue;
-            this.Sign_in_button.AutoSize = true;
-            this.Sign_in_button.BackColor = System.Drawing.SystemColors.ControlText;
-            this.Sign_in_button.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.Sign_in_button.ForeColor = System.Drawing.SystemColors.ButtonShadow;
-            this.Sign_in_button.LinkColor = System.Drawing.Color.Gray;
-            this.Sign_in_button.Location = new System.Drawing.Point(1230, 26);
-            this.Sign_in_button.Name = "Sign_in_button";
-            this.Sign_in_button.Size = new System.Drawing.Size(44, 18);
-            this.Sign_in_button.TabIndex = 0;
-            this.Sign_in_button.TabStop = true;
-            this.Sign_in_button.Text = "Вход";
-            this.Sign_in_button.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.Sign_in_button_LinkClicked);
-            // 
-            // Registration
-            // 
-            this.Registration.ActiveLinkColor = System.Drawing.Color.DarkBlue;
-            this.Registration.AutoSize = true;
-            this.Registration.BackColor = System.Drawing.SystemColors.ControlText;
-            this.Registration.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.Registration.LinkColor = System.Drawing.Color.Gray;
-            this.Registration.Location = new System.Drawing.Point(1280, 26);
-            this.Registration.Name = "Registration";
-            this.Registration.Size = new System.Drawing.Size(92, 18);
-            this.Registration.TabIndex = 1;
-            this.Registration.TabStop = true;
-            this.Registration.Text = "Регистация";
-            this.Registration.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.Registration_LinkClicked);
+            this.label.ActiveLinkColor = System.Drawing.Color.DarkBlue;
+            this.label.AutoSize = true;
+            this.label.BackColor = System.Drawing.SystemColors.ControlText;
+            this.label.ForeColor = System.Drawing.SystemColors.AppWorkspace;
+            this.label.Location = new System.Drawing.Point(1275, 13);
+            this.label.Name = "label";
+            this.label.Size = new System.Drawing.Size(0, 13);
+            this.label.TabIndex = 3;
             // 
             // Main
             // 
@@ -307,8 +286,7 @@
             this.AutoScroll = true;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(1384, 561);
-            this.Controls.Add(this.Registration);
-            this.Controls.Add(this.Sign_in_button);
+            this.Controls.Add(this.label);
             this.Controls.Add(menuStrip1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.HelpButton = true;
@@ -318,7 +296,6 @@
             this.MaximumSize = new System.Drawing.Size(1400, 600);
             this.MinimumSize = new System.Drawing.Size(1400, 600);
             this.Name = "Main";
-            this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Видеотека";
             this.Load += new System.EventHandler(this.Main_Load);
@@ -352,8 +329,7 @@
         private System.Windows.Forms.ToolStripMenuItem фантатстикаToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem фэнтезиToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem сериалыToolStripMenuItem;
-        public System.Windows.Forms.LinkLabel Sign_in_button;
-        public System.Windows.Forms.LinkLabel Registration;
+        private System.Windows.Forms.LinkLabel label;
     }
 }
 

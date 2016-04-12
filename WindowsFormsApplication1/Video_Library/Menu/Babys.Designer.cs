@@ -37,8 +37,9 @@
             this.ClientSize = new System.Drawing.Size(1384, 561);
             this.Name = "Babys";
             this.Text = "Детские";
-            this.Controls.SetChildIndex(this.Sign_in_button, 0);
-            this.Controls.SetChildIndex(this.Registration, 0);
+            this.Load += new System.EventHandler(this.Babys_Load);
+            //this.Controls.SetChildIndex(this.Sign_in_button, 0);
+            //this.Controls.SetChildIndex(this.Registration, 0);
             this.ResumeLayout(false);
             this.PerformLayout();
 

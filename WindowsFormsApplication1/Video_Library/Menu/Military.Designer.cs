@@ -38,8 +38,8 @@
             this.Name = "Military";
             this.Text = "Военные";
             this.Load += new System.EventHandler(this.Military_Load);
-            this.Controls.SetChildIndex(this.Sign_in_button, 0);
-            this.Controls.SetChildIndex(this.Registration, 0);
+            //this.Controls.SetChildIndex(this.Sign_in_button, 0);
+            //this.Controls.SetChildIndex(this.Registration, 0);
             this.ResumeLayout(false);
             this.PerformLayout();
 

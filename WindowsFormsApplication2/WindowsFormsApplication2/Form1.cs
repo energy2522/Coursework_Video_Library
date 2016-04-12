@@ -8,20 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Video_Library
+namespace WindowsFormsApplication2
 {
-    public partial class Detectives : Main
+    public partial class Form1 : Form
     {
-        public Detectives()
+        public Form1()
         {
             InitializeComponent();
         }
-
-        private void Detectives_Load(object sender, EventArgs e)
-        {
-
-        }
-
-     
     }
 }

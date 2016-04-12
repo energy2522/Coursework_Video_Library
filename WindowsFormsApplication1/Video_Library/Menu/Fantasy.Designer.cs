@@ -38,8 +38,8 @@
             this.Name = "Fantasy";
             this.Text = "Фэнтези";
             this.Load += new System.EventHandler(this.Fantasy_Load);
-            this.Controls.SetChildIndex(this.Sign_in_button, 0);
-            this.Controls.SetChildIndex(this.Registration, 0);
+            //this.Controls.SetChildIndex(this.Sign_in_button, 0);
+            //this.Controls.SetChildIndex(this.Registration, 0);
             this.ResumeLayout(false);
             this.PerformLayout();
 

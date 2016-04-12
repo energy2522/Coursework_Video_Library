@@ -38,8 +38,8 @@
             this.Name = "Detectives";
             this.Text = "Детективы";
             this.Load += new System.EventHandler(this.Detectives_Load);
-            this.Controls.SetChildIndex(this.Sign_in_button, 0);
-            this.Controls.SetChildIndex(this.Registration, 0);
+            //this.Controls.SetChildIndex(this.Sign_in_button, 0);
+            //this.Controls.SetChildIndex(this.Registration, 0);
             this.ResumeLayout(false);
             this.PerformLayout();
 
