@@ -30,6 +30,7 @@
         {
             System.Windows.Forms.MenuStrip menuStrip1;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
+            this.label = new System.Windows.Forms.LinkLabel();
             this.биографииToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.боевикиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.вестерныToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -52,45 +53,20 @@
             this.фантатстикаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.фэнтезиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.сериалыToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.label = new System.Windows.Forms.LinkLabel();
             menuStrip1 = new System.Windows.Forms.MenuStrip();
             menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // menuStrip1
+            // label
             // 
-            menuStrip1.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            menuStrip1.Dock = System.Windows.Forms.DockStyle.Left;
-            menuStrip1.Font = new System.Drawing.Font("Century", 12F);
-            menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.биографииToolStripMenuItem,
-            this.боевикиToolStripMenuItem,
-            this.вестерныToolStripMenuItem,
-            this.военныеToolStripMenuItem,
-            this.детективыToolStripMenuItem,
-            this.детскиеToolStripMenuItem,
-            this.документальныеToolStripMenuItem,
-            this.драмыToolStripMenuItem,
-            this.историческиеToolStripMenuItem,
-            this.комедииToolStripMenuItem,
-            this.криминалToolStripMenuItem,
-            this.мелодрамыToolStripMenuItem,
-            this.мультифильмыToolStripMenuItem,
-            this.мюзиклыToolStripMenuItem,
-            this.приключенияToolStripMenuItem,
-            this.семейныеToolStripMenuItem,
-            this.спортивныеToolStripMenuItem,
-            this.триллерыToolStripMenuItem,
-            this.ужасыToolStripMenuItem,
-            this.фантатстикаToolStripMenuItem,
-            this.фэнтезиToolStripMenuItem,
-            this.сериалыToolStripMenuItem});
-            menuStrip1.Location = new System.Drawing.Point(0, 0);
-            menuStrip1.Name = "menuStrip1";
-            menuStrip1.Padding = new System.Windows.Forms.Padding(5, 10, 5, 5);
-            menuStrip1.Size = new System.Drawing.Size(164, 561);
-            menuStrip1.TabIndex = 2;
-            menuStrip1.Text = "Меню";
+            this.label.ActiveLinkColor = System.Drawing.Color.DarkBlue;
+            this.label.AutoSize = true;
+            this.label.BackColor = System.Drawing.SystemColors.ControlText;
+            this.label.ForeColor = System.Drawing.SystemColors.AppWorkspace;
+            this.label.Location = new System.Drawing.Point(1275, 13);
+            this.label.Name = "label";
+            this.label.Size = new System.Drawing.Size(0, 13);
+            this.label.TabIndex = 3;
             // 
             // биографииToolStripMenuItem
             // 
@@ -268,16 +244,40 @@
             this.сериалыToolStripMenuItem.Text = "Сериалы";
             this.сериалыToolStripMenuItem.Click += new System.EventHandler(this.сериалыToolStripMenuItem_Click);
             // 
-            // label
+            // menuStrip1
             // 
-            this.label.ActiveLinkColor = System.Drawing.Color.DarkBlue;
-            this.label.AutoSize = true;
-            this.label.BackColor = System.Drawing.SystemColors.ControlText;
-            this.label.ForeColor = System.Drawing.SystemColors.AppWorkspace;
-            this.label.Location = new System.Drawing.Point(1275, 13);
-            this.label.Name = "label";
-            this.label.Size = new System.Drawing.Size(0, 13);
-            this.label.TabIndex = 3;
+            menuStrip1.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            menuStrip1.Dock = System.Windows.Forms.DockStyle.Left;
+            menuStrip1.Font = new System.Drawing.Font("Century", 12F);
+            menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.биографииToolStripMenuItem,
+            this.боевикиToolStripMenuItem,
+            this.вестерныToolStripMenuItem,
+            this.военныеToolStripMenuItem,
+            this.детективыToolStripMenuItem,
+            this.детскиеToolStripMenuItem,
+            this.документальныеToolStripMenuItem,
+            this.драмыToolStripMenuItem,
+            this.историческиеToolStripMenuItem,
+            this.комедииToolStripMenuItem,
+            this.криминалToolStripMenuItem,
+            this.мелодрамыToolStripMenuItem,
+            this.мультифильмыToolStripMenuItem,
+            this.мюзиклыToolStripMenuItem,
+            this.приключенияToolStripMenuItem,
+            this.семейныеToolStripMenuItem,
+            this.спортивныеToolStripMenuItem,
+            this.триллерыToolStripMenuItem,
+            this.ужасыToolStripMenuItem,
+            this.фантатстикаToolStripMenuItem,
+            this.фэнтезиToolStripMenuItem,
+            this.сериалыToolStripMenuItem});
+            menuStrip1.Location = new System.Drawing.Point(0, 0);
+            menuStrip1.Name = "menuStrip1";
+            menuStrip1.Padding = new System.Windows.Forms.Padding(5, 10, 5, 5);
+            menuStrip1.Size = new System.Drawing.Size(164, 561);
+            menuStrip1.TabIndex = 2;
+            menuStrip1.Text = "Меню";
             // 
             // Main
             // 
@@ -307,6 +307,7 @@
         }
 
         #endregion
+        private System.Windows.Forms.LinkLabel label;
         private System.Windows.Forms.ToolStripMenuItem биографииToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem боевикиToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem вестерныToolStripMenuItem;
@@ -329,7 +330,6 @@
         private System.Windows.Forms.ToolStripMenuItem фантатстикаToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem фэнтезиToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem сериалыToolStripMenuItem;
-        private System.Windows.Forms.LinkLabel label;
     }
 }
 

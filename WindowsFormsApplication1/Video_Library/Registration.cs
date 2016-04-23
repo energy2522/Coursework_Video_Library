@@ -43,7 +43,7 @@ namespace Video_Library
             }
             fail.Close();
             if(counter != 0) { label2.Text = "такой логин уже есть"; }
-           else if (Password.Text.Equals(CopyPassword.Text) && Names.Text != "" && Login.Text != "" && Password.Text != "" && CopyPassword.Text != "")
+           else if (Password.Text.Equals(CopyPassword.Text) && Names.Text != "" && Login.Text != "" && Password.Text != "" && CopyPassword.Text != "" && Names.Text.Length >= 3 && Login.Text.Length >= 4 && Password.Text.Length >= 4)
             {
                 
 
@@ -68,8 +68,11 @@ namespace Video_Library
             }
             else if(Password.Text != CopyPassword.Text)
             {
-                label2.Text = "повторный пароль не совпадает"; Password.Text = ""; CopyPassword.Text = "";
+                label2.Text = "повторный пароль\nне совпадает"; Password.Text = ""; CopyPassword.Text = "";
             }
+            else if(Names.Text.Length < 3) { label2.Text = "Слишком короткое имя!\nМнимум 3 буквы"; }
+            else if(Login.Text.Length < 4) { label2.Text = "Слишком короткий логин!\nМинимум 4 буквы"; }
+            else if(Password.Text.Length < 4) { label2.Text = "Слишком короткий пароль!\nМинимум 4 буквы"; }
             }
         }
     }

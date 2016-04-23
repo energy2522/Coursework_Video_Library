@@ -16,22 +16,9 @@ namespace Video_Library
         {
             InitializeComponent();
         }
-      //  SignIn ob = new SignIn();
-       // lable.Text = ob.n();
-        
+    
 
-        private void Registration_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            Registration r = new Registration();
-            r.Show();
-
-        }
-
-        private void Sign_in_button_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            SignIn si = new SignIn();
-            si.Show();
-        }
+     
 
         private void биографииToolStripMenuItem_Click(object sender, EventArgs e)
         {

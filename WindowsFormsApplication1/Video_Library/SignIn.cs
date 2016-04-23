@@ -56,10 +56,7 @@ namespace Video_Library
 
             if (counter != 2 && counter != 3) { Password.Text = ""; label6.Text = "введен неверно \nлогин или пароль"; }
             else if (counter == 2) { Main m = new Main(); m.Show(); this.Hide(); }
-            //  public string n()
-            //{
-            //     return name;
-            // }
+            
 
 
 
