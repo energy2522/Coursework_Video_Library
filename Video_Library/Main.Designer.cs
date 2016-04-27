@@ -195,7 +195,7 @@
             // 
             // button1
             // 
-            this.button1.BackColor = System.Drawing.SystemColors.GrayText;
+            this.button1.BackColor = System.Drawing.SystemColors.Menu;
             this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.button1.Font = new System.Drawing.Font("Century", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.button1.Location = new System.Drawing.Point(666, 78);

@@ -121,43 +121,6 @@ namespace Video_Library
                 MessageBox.Show("Фильма нет");
             }
 
-
-
-            //StreamReader film = new StreamReader(way, Encoding.UTF8);
-            
-            //while (true)
-            //{
-
-            //    string str = film.ReadLine();
-            //    if (str == null) break;
-            //    int l = NM.Length;
-            //    NM = NM.ToUpper();
-            //    int ind = str.IndexOf('*');
-            //    string Name1 = str.Substring(0, l).ToUpper();
-            //    if (NM.Equals(Name1))
-            //    {
-            //        string Name = str.Substring(0, ind);
-            //        int t = 0;
-            //        int ind1 = str.IndexOf('*', ind + 1);
-            //        t = ind1 - ind;
-            //        string Y = str.Substring(ind + 1, t - 1);
-            //        int ind2 = str.IndexOf('*', ind1 + 1);
-            //        t = ind2 - ind1;
-            //        string D = str.Substring(ind1 + 1, t - 1);
-            //        int ind3 = str.IndexOf('*', ind2 + 1);
-            //        t = ind3 - ind2;
-            //        string A = str.Substring(ind2 + 1, t - 1);
-            //        int ind4 = str.IndexOf('*', ind3 + 1);
-            //        t = ind4 - ind3;
-            //        string T = str.Substring(ind3 + 1, t - 1);
-            //        int ind5 = str.IndexOf('*', ind4 + 1);
-            //        t = ind5 - ind4;
-            //        string O = str.Substring(ind4 + 1, t - 1);
-            //        dataGridView1.Rows.Add(Name, Y, D, A, T, O);
-            //        counter++;
-            //    }
-            //}
-           
         }
 
         private void Main_FormClosing(object sender, FormClosingEventArgs e)
