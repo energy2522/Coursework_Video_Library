@@ -35,12 +35,6 @@
             this.label = new System.Windows.Forms.LinkLabel();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
             this.NameFilm = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Genere = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.YearOut = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -48,6 +42,11 @@
             this.Actors = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Times = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Description = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -139,6 +138,54 @@
             this.dataGridView1.Visible = false;
             this.dataGridView1.DoubleClick += new System.EventHandler(this.dataGridView1_DoubleClick);
             // 
+            // NameFilm
+            // 
+            this.NameFilm.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.NameFilm.HeaderText = "Название";
+            this.NameFilm.Name = "NameFilm";
+            this.NameFilm.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.NameFilm.Width = 82;
+            // 
+            // Genere
+            // 
+            this.Genere.HeaderText = "Жанр";
+            this.Genere.Name = "Genere";
+            // 
+            // YearOut
+            // 
+            this.YearOut.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.YearOut.HeaderText = "Год выхода";
+            this.YearOut.Name = "YearOut";
+            this.YearOut.Width = 83;
+            // 
+            // Director
+            // 
+            this.Director.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.Director.HeaderText = "Режисер";
+            this.Director.Name = "Director";
+            this.Director.Width = 77;
+            // 
+            // Actors
+            // 
+            this.Actors.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.Actors.HeaderText = "Актеры";
+            this.Actors.Name = "Actors";
+            this.Actors.Width = 70;
+            // 
+            // Times
+            // 
+            this.Times.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.Times.HeaderText = "Длительность";
+            this.Times.Name = "Times";
+            this.Times.Width = 105;
+            // 
+            // Description
+            // 
+            this.Description.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.Description.HeaderText = "Краткое описание";
+            this.Description.Name = "Description";
+            this.Description.Width = 114;
+            // 
             // textBox1
             // 
             this.textBox1.Location = new System.Drawing.Point(427, 81);
@@ -190,71 +237,13 @@
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
-            // button4
-            // 
-            this.button4.Location = new System.Drawing.Point(281, 125);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(75, 23);
-            this.button4.TabIndex = 11;
-            this.button4.Text = "button4";
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
-            // 
-            // NameFilm
-            // 
-            this.NameFilm.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.NameFilm.HeaderText = "Название";
-            this.NameFilm.Name = "NameFilm";
-            this.NameFilm.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.NameFilm.Width = 82;
-            // 
-            // Genere
-            // 
-            this.Genere.HeaderText = "Жанр";
-            this.Genere.Name = "Genere";
-            // 
-            // YearOut
-            // 
-            this.YearOut.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.YearOut.HeaderText = "Год выхода";
-            this.YearOut.Name = "YearOut";
-            this.YearOut.Width = 90;
-            // 
-            // Director
-            // 
-            this.Director.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.Director.HeaderText = "Режисер";
-            this.Director.Name = "Director";
-            this.Director.Width = 77;
-            // 
-            // Actors
-            // 
-            this.Actors.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.Actors.HeaderText = "Актеры";
-            this.Actors.Name = "Actors";
-            this.Actors.Width = 70;
-            // 
-            // Times
-            // 
-            this.Times.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.Times.HeaderText = "Длительность";
-            this.Times.Name = "Times";
-            this.Times.Width = 105;
-            // 
-            // Description
-            // 
-            this.Description.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.Description.HeaderText = "Краткое описание";
-            this.Description.Name = "Description";
-            this.Description.Width = 114;
-            // 
             // Main
             // 
+            this.AcceptButton = this.button1;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(1184, 461);
-            this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.label1);
@@ -288,7 +277,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
         private System.Windows.Forms.DataGridViewTextBoxColumn NameFilm;
         private System.Windows.Forms.DataGridViewTextBoxColumn Genere;
         private System.Windows.Forms.DataGridViewTextBoxColumn YearOut;

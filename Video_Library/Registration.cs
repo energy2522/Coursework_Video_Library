@@ -43,7 +43,8 @@ namespace Video_Library
                 if (str == null) break;
                 
                 int ind = str.IndexOf(':');
-                if (Login.Text.Equals(str.Substring(0, ind))) counter++; break;
+                if (ind < 0) break;
+                if (Login.Text.Equals(str.Substring(0, ind))) { counter++; break; }
 
             }
             fail.Close();

@@ -14,11 +14,12 @@ namespace Video_Library
     public partial class Main : Form
     {
         public Class1 films;
-
-        public Main(string frm)
+        public string log;
+        public Main(string frm, string log)
         {
             InitializeComponent();
             label1.Text = "Привет, "+frm;
+            this.log = log;
         }
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -30,6 +31,7 @@ namespace Video_Library
                 ShowFilms();
                 dataGridView1.Visible = true;
                     } break;
+
                 case "Боевики": {
                         films = new Class1("Боевики", str("Militants.txt"));
                         ShowFilms();
@@ -267,7 +269,7 @@ namespace Video_Library
 
         private void button3_Click(object sender, EventArgs e)
         {
-            PersonalArea PA = new PersonalArea();
+            PersonalArea PA = new PersonalArea( log);
             PA.ShowDialog();
         }
 
@@ -282,16 +284,28 @@ namespace Video_Library
         {
             if (dataGridView1.SelectedCells.Count == 1)
             {
-                var form = new Form1(films.FilmList[dataGridView1.SelectedCells[0].RowIndex], films.Genre);
-                form.ShowDialog();
+                DialogResult dialogResult = MessageBox.Show("Вы хотите заказать этот фильм?", "", MessageBoxButtons.YesNo);
+                if (dialogResult == DialogResult.Yes)
+                {
+                    DateTime dt = DateTime.Now;
+                    ;
+                    string dat = dt.Date.ToString("dd.MM.yyyy");
+                    DateTime dl = dt.AddDays(30);
+                    string dal = dl.Date.ToString("dd.MM.yyyy");
+                    StreamWriter write = new StreamWriter("users.txt", true);
+                    write.WriteLine(log + "/" + films.FilmList[dataGridView1.CurrentRow.Index].Name + "/" + films.FilmList[dataGridView1.CurrentRow.Index].YearOut + "/" + films.FilmList[dataGridView1.CurrentRow.Index].Director + "/" + films.Genre + "/" + dat + "/" + dal + "/");
+                    write.Close();
+                }
+                else if (dialogResult == DialogResult.No)
+                {
+                    
+                }
+
             }
 
-            //StreamReader film = new StreamReader("users.txt");
-            //testValue2 = (String)dataGridView1["Name", 4].Value;
+
         }
 
-        private void button4_Click(object sender, EventArgs e)
-        {
-        }
+        
     }
 }

@@ -30,26 +30,38 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PersonalArea));
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
             this.NameF = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.YearO = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Director = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Genre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DateReceiving = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
+            this.DateReturn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.NameF,
             this.YearO,
             this.Director,
-            this.DateReceiving});
+            this.Genre,
+            this.DateReceiving,
+            this.DateReturn});
             this.dataGridView1.Location = new System.Drawing.Point(-2, 173);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(687, 150);
             this.dataGridView1.TabIndex = 0;
+            // 
+            // monthCalendar1
+            // 
+            this.monthCalendar1.Location = new System.Drawing.Point(521, 8);
+            this.monthCalendar1.Name = "monthCalendar1";
+            this.monthCalendar1.TabIndex = 1;
             // 
             // NameF
             // 
@@ -66,16 +78,20 @@
             this.Director.HeaderText = "Режисер";
             this.Director.Name = "Director";
             // 
+            // Genre
+            // 
+            this.Genre.HeaderText = "Жанр";
+            this.Genre.Name = "Genre";
+            // 
             // DateReceiving
             // 
             this.DateReceiving.HeaderText = "Дата получения";
             this.DateReceiving.Name = "DateReceiving";
             // 
-            // monthCalendar1
+            // DateReturn
             // 
-            this.monthCalendar1.Location = new System.Drawing.Point(521, 8);
-            this.monthCalendar1.Name = "monthCalendar1";
-            this.monthCalendar1.TabIndex = 1;
+            this.DateReturn.HeaderText = "Дата возвращения";
+            this.DateReturn.Name = "DateReturn";
             // 
             // PersonalArea
             // 
@@ -98,12 +114,13 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.DataGridViewTextBoxColumn DateReceiving;
         private System.Windows.Forms.MonthCalendar monthCalendar1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Director;
-        private System.Windows.Forms.DataGridViewTextBoxColumn YearO;
-        private System.Windows.Forms.DataGridViewTextBoxColumn NameF;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NameF;
+        private System.Windows.Forms.DataGridViewTextBoxColumn YearO;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Director;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Genre;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DateReceiving;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DateReturn;
     }
 }
