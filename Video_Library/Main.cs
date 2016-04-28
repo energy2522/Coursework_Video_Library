@@ -14,12 +14,12 @@ namespace Video_Library
     public partial class Main : Form
     {
 
-        public List<Film> films;
+        public static List<Film> films;
         public string log;
         public Main(string frm, string log)
         {
             InitializeComponent();
-            label1.Text = "Привет, "+frm;
+            label1.Text = "Привет, " + frm;
             this.log = log;
         }
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -41,7 +41,6 @@ namespace Video_Library
             {
                 string str = film.ReadLine();
                 if (str == null) break;
-
                 string[] s1 = film.ReadToEnd().Split('\n');
 
                 for (int i = 0; i < s1.Length; i++)
@@ -49,12 +48,15 @@ namespace Video_Library
                     string[] s = s1[i].Split('*');
                     List.Add(new Film(s[0], genre, s[1], s[2], s[3], s[4], s[5]));
                 }
-
+                //string[] s = str.Split('*');
+                //List.Add(new Film(s[0], genre, s[1], s[2], s[3], s[4], s[5]));
             }
+
             film.Close();
 
             return List;
         }
+
 
 
         public List<Film> GetGenreFilms(List<Film> films, string genre)
@@ -101,18 +103,18 @@ namespace Video_Library
         {
             dataGridView1.Rows.Clear();
             SearchData(textBox1.Text);
-            
+
         }
-        
+
         public void SearchData(string NM)
         {
-            List<Film> list = new List<Film>(); 
+            List<Film> list = new List<Film>();
 
             list.AddRange(SearchFilms(NM));
             comboBox1.Text = "";
 
 
-            if(list.Count > 0)
+            if (list.Count > 0)
             {
                 ShowFilms(list);
             }
@@ -125,12 +127,12 @@ namespace Video_Library
 
         private void Main_FormClosing(object sender, FormClosingEventArgs e)
         {
-            Application.Exit(); 
+            Application.Exit();
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-            PersonalArea PA = new PersonalArea( log);
+            PersonalArea PA = new PersonalArea(log);
             PA.ShowDialog();
         }
 
@@ -143,7 +145,7 @@ namespace Video_Library
 
         private void dataGridView1_DoubleClick(object sender, EventArgs e)
         {
-            List<Film> f = GetGenreFilms(films, comboBox1.Items[comboBox1.SelectedIndex].ToString());
+            //  List<Film> f = GetGenreFilms(films, comboBox1.Items[comboBox1.SelectedIndex].ToString());
 
             if (dataGridView1.SelectedCells.Count == 1)
             {
@@ -151,7 +153,7 @@ namespace Video_Library
                 if (dialogResult == DialogResult.Yes)
                 {
                     DateTime dt = DateTime.Now;
-                    
+
                     string dat = dt.Date.ToString("dd.MM.yyyy");
                     DateTime dl = dt.AddDays(30);
                     string dal = dl.Date.ToString("dd.MM.yyyy");
@@ -161,7 +163,7 @@ namespace Video_Library
                 }
                 else if (dialogResult == DialogResult.No)
                 {
-                    
+
                 }
 
             }
@@ -200,6 +202,50 @@ namespace Video_Library
                     move.Add(films[i]);
             }
             return move;
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            AddFilm AF = new AddFilm();
+            AF.ShowDialog(this);
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            if (dataGridView1.CurrentCell == null)
+            {
+                MessageBox.Show("Выберите фильм", "Ошибка");
+                return;
+            }
+
+            DataGridViewRow row = dataGridView1.CurrentRow;
+
+            Film f = FieldsActions.ConvertRowToFilm(row);
+
+            AddFilm AF = new AddFilm();
+            AF.ChangFields(f);
+            AF.ShowDialog(this);
+        }
+
+        public void ChangeRowOfFilm(Film film)
+        {
+            int ind = films.FindIndex(key => key == FieldsActions.ConvertRowToFilm(dataGridView1.CurrentRow));
+            films.RemoveAt(ind);
+            films.Insert(ind, film);
+
+            if(film.Genre != dataGridView1.CurrentRow.Cells[1].Value.ToString())
+            {
+                dataGridView1.Rows.Remove(dataGridView1.CurrentRow);
+                return;
+            }
+
+            dataGridView1.CurrentRow.Cells[0].Value = film.Name;
+            dataGridView1.CurrentRow.Cells[1].Value = film.Genre;
+            dataGridView1.CurrentRow.Cells[2].Value = film.YearOut;
+            dataGridView1.CurrentRow.Cells[3].Value = film.Director;
+            dataGridView1.CurrentRow.Cells[4].Value = film.Actors;
+            dataGridView1.CurrentRow.Cells[5].Value = film.Time;
+            dataGridView1.CurrentRow.Cells[6].Value = film.ShortView;
         }
     }
 }
