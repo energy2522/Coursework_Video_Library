@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddFilm));
             this.NameBox = new System.Windows.Forms.TextBox();
             this.YearBox = new System.Windows.Forms.TextBox();
             this.ActorsBox = new System.Windows.Forms.TextBox();
@@ -43,6 +44,7 @@
             this.label7 = new System.Windows.Forms.Label();
             this.ShortBox = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
+            this.Eror = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // NameBox
@@ -51,6 +53,7 @@
             this.NameBox.Name = "NameBox";
             this.NameBox.Size = new System.Drawing.Size(143, 20);
             this.NameBox.TabIndex = 0;
+            this.NameBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.NameBox_KeyPress);
             // 
             // YearBox
             // 
@@ -58,6 +61,7 @@
             this.YearBox.Name = "YearBox";
             this.YearBox.Size = new System.Drawing.Size(143, 20);
             this.YearBox.TabIndex = 1;
+            this.YearBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.YearBox_KeyPress);
             // 
             // ActorsBox
             // 
@@ -65,6 +69,7 @@
             this.ActorsBox.Name = "ActorsBox";
             this.ActorsBox.Size = new System.Drawing.Size(171, 20);
             this.ActorsBox.TabIndex = 2;
+            this.ActorsBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ActorsBox_KeyPress);
             // 
             // DirectorBox
             // 
@@ -72,6 +77,7 @@
             this.DirectorBox.Name = "DirectorBox";
             this.DirectorBox.Size = new System.Drawing.Size(143, 20);
             this.DirectorBox.TabIndex = 3;
+            this.DirectorBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.DirectorBox_KeyPress);
             // 
             // label1
             // 
@@ -93,6 +99,7 @@
             // 
             // comboBox1
             // 
+            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.ItemHeight = 13;
             this.comboBox1.Items.AddRange(new object[] {
@@ -164,6 +171,7 @@
             this.TimeBox.Name = "TimeBox";
             this.TimeBox.Size = new System.Drawing.Size(171, 20);
             this.TimeBox.TabIndex = 10;
+            this.TimeBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TimeBox_KeyPress);
             // 
             // label7
             // 
@@ -180,6 +188,7 @@
             this.ShortBox.Name = "ShortBox";
             this.ShortBox.Size = new System.Drawing.Size(171, 20);
             this.ShortBox.TabIndex = 12;
+            this.ShortBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ShortBox_KeyPress);
             // 
             // button1
             // 
@@ -191,12 +200,21 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // Eror
+            // 
+            this.Eror.AutoSize = true;
+            this.Eror.Location = new System.Drawing.Point(221, 32);
+            this.Eror.Name = "Eror";
+            this.Eror.Size = new System.Drawing.Size(0, 13);
+            this.Eror.TabIndex = 15;
+            // 
             // AddFilm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.ClientSize = new System.Drawing.Size(409, 280);
+            this.Controls.Add(this.Eror);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.ShortBox);
@@ -212,7 +230,12 @@
             this.Controls.Add(this.ActorsBox);
             this.Controls.Add(this.YearBox);
             this.Controls.Add(this.NameBox);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(425, 319);
+            this.MinimumSize = new System.Drawing.Size(425, 319);
             this.Name = "AddFilm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Добавить";
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -236,5 +259,6 @@
         private System.Windows.Forms.TextBox TimeBox;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label Eror;
     }
 }

@@ -18,72 +18,75 @@ namespace Video_Library
         {
             InitializeComponent();
         }
-        private void Names_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            char ch = e.KeyChar;
-            label2.Text = "";
 
-
-            if (Char.IsPunctuation(ch) || Char.IsDigit(ch) ||  Char.IsSeparator(ch) || Char.IsSymbol(ch))
-            {
-                e.Handled = true;
-                label2.Text = "Вы пытаетесь ввести\n не разрешенный символ";
-            }
-            
-        }
+        //метод який записує данні або видає помилку
         private void button1_Click(object sender, EventArgs e)
-            
+
         {
             int counter = 0;
+            int rev = 0;
             StreamReader fail = new StreamReader("users.txt");
-
-            while (true)
-            {
-                string str = fail.ReadLine();
-                if (str == null) break;
-                
-                int ind = str.IndexOf(':');
-                if (ind < 0) break;
-                if (Login.Text.Equals(str.Substring(0, ind))) { counter++; break; }
-
-            }
-            fail.Close();
-            if (counter != 0) { label2.Text = "такой логин уже есть"; }
-            else if (Password.Text.Equals(CopyPassword.Text) && Names.Text != "" && Login.Text != "" && Password.Text != "" && CopyPassword.Text != "" && Names.Text.Length >= 3 && Login.Text.Length >= 4 && Password.Text.Length >= 4)
-            {
-
-                using (StreamWriter writen = new StreamWriter("users.txt", true))
+            string str = fail.ReadLine();
+            if (str == null) { rev = -1; fail.Close(); }
+            else {
+                while (true)
                 {
 
-                    writen.WriteLine(Login.Text + ":" + Password.Text + ":" + Names.Text + ":");
-                    writen.Close();
-                    SignIn si = new SignIn();
-                    si.Show();
-                    this.Hide();
-                   
+                    
+
+                    int ind = str.IndexOf(':');
+                    if (ind < 0) break;
+                    if (Login.Text.Equals(str.Substring(0, ind))) { counter++; break; }
+                    str = fail.ReadLine();
+                    if (str == null) { break; }
                 }
-            }
-            else if (Names.Text.Equals("") || Login.Text.Equals(""))
-            {
-                label2.Text = "не все поля заполнены";
 
+                fail.Close();
             }
-            else if (Password.Text.Equals("") | CopyPassword.Text.Equals(""))
-            {
-                label2.Text = "поле с паролем пустое";
-            }
-            else if (Password.Text != CopyPassword.Text)
-            {
-                label2.Text = "повторный пароль\nне совпадает"; Password.Text = ""; CopyPassword.Text = "";
-            }
-            else if (Names.Text.Length < 3) { label2.Text = "Слишком короткое имя!\nМнимум 3 буквы"; }
-            else if (Login.Text.Length < 4) { label2.Text = "Слишком короткий логин!\nМинимум 4 буквы"; }
-            else if (Password.Text.Length < 4) { label2.Text = "Слишком короткий пароль!\nМинимум 4 буквы"; }
-            else if (Names.Text.Length > 10) { label2.Text = "Слишком длинное имя!/nМаксимум 10 букв"; }
-            else if (Login.Text.Length > 16) { label2.Text = "Слишком длинный логин!\nМаксимум 16 буквы"; }
-            else if (Password.Text.Length > 16) { label2.Text = "Слишком длинный пароль!\nМаксимум 16 буквы"; }
-        }
+                if (counter != 0 && rev == 0) { label2.Text = "такой логин уже есть"; }
+                else if (Password.Text.Equals(CopyPassword.Text) && Names.Text != "" && Login.Text != "" && Password.Text != "" && CopyPassword.Text != "" && Names.Text.Length >= 3 && Login.Text.Length >= 4 && Password.Text.Length >= 4)
+                {
 
+                    using (StreamWriter writen = new StreamWriter("users.txt", true))
+                    {
+                        if (rev == -1)
+                        {
+                            writen.WriteLine(Login.Text + ":" + Password.Text + ":" + Names.Text + ":");
+                        }
+                        else
+                        {
+                            writen.WriteLine();
+                            writen.Write(Login.Text + ":" + Password.Text + ":" + Names.Text + ":");
+                        }
+                        writen.Close();
+                        SignIn si = new SignIn();
+                        si.Show();
+                        this.Hide();
+
+                    }
+                }
+                else if (Names.Text.Equals("") || Login.Text.Equals(""))
+                {
+                    label2.Text = "не все поля заполнены";
+
+                }
+                else if (Password.Text.Equals("") | CopyPassword.Text.Equals(""))
+                {
+                    label2.Text = "поле с паролем пустое";
+                }
+                else if (Password.Text != CopyPassword.Text)
+                {
+                    label2.Text = "повторный пароль\nне совпадает"; Password.Text = ""; CopyPassword.Text = "";
+                }
+                else if (Names.Text.Length < 3) { label2.Text = "Слишком короткое имя!\nМнимум 3 буквы"; }
+                else if (Login.Text.Length < 6) { label2.Text = "Слишком короткий логин!\nМинимум 6 буквы"; }
+                else if (Password.Text.Length < 4) { label2.Text = "Слишком короткий пароль!\nМинимум 4 буквы"; }
+                else if (Names.Text.Length > 10) { label2.Text = "Слишком длинное имя!/nМаксимум 10 букв"; }
+                else if (Login.Text.Length > 10) { label2.Text = "Слишком длинный логин!\nМаксимум 10 буквы"; }
+                else if (Password.Text.Length > 16) { label2.Text = "Слишком длинный пароль!\nМаксимум 16 буквы"; }
+            }
+        
+        //подія для переходу на форму входу
         private void button2_Click(object sender, EventArgs e)
         {
             
@@ -92,12 +95,20 @@ namespace Video_Library
             this.Hide();
 
         }
-
-        private void Registration_FormClosing(object sender, FormClosingEventArgs e)
+        //перевірка на введення правельних символів у форму ім'я
+        private void Names_KeyPress(object sender, KeyPressEventArgs e)
         {
-            Application.Exit(); 
-        }
+            char ch = e.KeyChar;
+            label2.Text = "";
 
+            if (Char.IsPunctuation(ch) || Char.IsDigit(ch) || Char.IsSeparator(ch) || Char.IsSymbol(ch))
+            {
+                e.Handled = true;
+                label2.Text = "Вы пытаетесь ввести\n не разрешенный символ";
+            }
+
+        }
+        //перевірка на введення правельних символів у форму логіну
         private void Login_KeyPress(object sender, KeyPressEventArgs e)
         {
             label2.Text = "";
@@ -108,7 +119,7 @@ namespace Video_Library
                 label2.Text = "Вы пытаетесь ввести\n не разрешенный символ";
             }
         }
-
+        //перевірка на введення правельних символів у форму пароля
         private void Password_KeyPress(object sender, KeyPressEventArgs e)
         {
             label2.Text = "";
@@ -119,7 +130,7 @@ namespace Video_Library
                 label2.Text = "Вы пытаетесь ввести\n не разрешенный символ";
             }
         }
-
+        //перевірка на введення правельних символів у форму повторного пароля
         private void CopyPassword_KeyPress(object sender, KeyPressEventArgs e)
         {
             label2.Text = "";
@@ -129,6 +140,11 @@ namespace Video_Library
                 e.Handled = true;
                 label2.Text = "Вы пытаетесь ввести\n не разрешенный символ";
             }
+        }
+        //метод закриття форми
+        private void Registration_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
         }
     }
     }

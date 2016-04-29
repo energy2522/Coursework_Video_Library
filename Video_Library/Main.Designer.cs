@@ -49,6 +49,7 @@
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -65,6 +66,8 @@
             // 
             // comboBox1
             // 
+            this.comboBox1.DisplayMember = " ";
+            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.ItemHeight = 13;
             this.comboBox1.Items.AddRange(new object[] {
@@ -93,7 +96,7 @@
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(144, 21);
             this.comboBox1.TabIndex = 4;
-            this.comboBox1.Text = "Жанры";
+            this.comboBox1.ValueMember = "null";
             this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // dataGridView1
@@ -123,6 +126,7 @@
             this.dataGridView1.Location = new System.Drawing.Point(-1, 176);
             this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Menu;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
@@ -145,6 +149,7 @@
             this.NameFilm.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.NameFilm.HeaderText = "Название";
             this.NameFilm.Name = "NameFilm";
+            this.NameFilm.ReadOnly = true;
             this.NameFilm.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.NameFilm.Width = 82;
             // 
@@ -152,12 +157,14 @@
             // 
             this.Genere.HeaderText = "Жанр";
             this.Genere.Name = "Genere";
+            this.Genere.ReadOnly = true;
             // 
             // YearOut
             // 
             this.YearOut.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.YearOut.HeaderText = "Год выхода";
             this.YearOut.Name = "YearOut";
+            this.YearOut.ReadOnly = true;
             this.YearOut.Width = 83;
             // 
             // Director
@@ -165,6 +172,7 @@
             this.Director.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.Director.HeaderText = "Режисер";
             this.Director.Name = "Director";
+            this.Director.ReadOnly = true;
             this.Director.Width = 77;
             // 
             // Actors
@@ -172,6 +180,7 @@
             this.Actors.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.Actors.HeaderText = "Актеры";
             this.Actors.Name = "Actors";
+            this.Actors.ReadOnly = true;
             this.Actors.Width = 70;
             // 
             // Times
@@ -179,6 +188,7 @@
             this.Times.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.Times.HeaderText = "Длительность";
             this.Times.Name = "Times";
+            this.Times.ReadOnly = true;
             this.Times.Width = 105;
             // 
             // Description
@@ -186,6 +196,7 @@
             this.Description.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.Description.HeaderText = "Краткое описание";
             this.Description.Name = "Description";
+            this.Description.ReadOnly = true;
             this.Description.Width = 114;
             // 
             // textBox1
@@ -259,6 +270,18 @@
             this.button5.UseVisualStyleBackColor = true;
             this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.SystemColors.MenuBar;
+            this.label2.Font = new System.Drawing.Font("Georgia", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label2.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.label2.Location = new System.Drawing.Point(37, 63);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(48, 18);
+            this.label2.TabIndex = 13;
+            this.label2.Text = "Жанр";
+            // 
             // Main
             // 
             this.AcceptButton = this.button1;
@@ -266,6 +289,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(1184, 461);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
@@ -311,6 +335,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Description;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Label label2;
     }
 }
 

@@ -16,14 +16,14 @@ namespace Video_Library
     public partial class SignIn : Form
     {
 
-        static public string name;
-        static public string login;
+        static public string name;//змінна  для передачі імені користувача
+        static public string login;// змінна для передачі логіну користувача
         public SignIn()
         {
             InitializeComponent();
         }
      
-
+        //метод перевірки правильності пароля
         public void validation()
         {
             StreamReader fail = new StreamReader("users.txt", Encoding.UTF8);
@@ -53,26 +53,27 @@ namespace Video_Library
             }
             if (counter != 2 && counter != 3) { Password.Text = ""; label6.Text = "введен неверно \nлогин или пароль"; }
             else if (counter == 2) {
-                Main m = new Main(name, login);
-                
+
+                Main m = new Main(name, login);//перехід на другу форму
                 m.Show();
                 this.Hide();
             }
             fail.Close();
         }
-
+        //подія кнопки входу
         private void button1_Click(object sender, EventArgs e)
         {
             validation();
         }
 
-       
+       //перехід на форму реєстрації
         private void button2_Click(object sender, EventArgs e)
         {
             Registration rg = new Registration();
             rg.Show();
             this.Hide();
         }
+        //метод який закриває форму
         private void SignIn_FormClosing(object sender, FormClosingEventArgs e)
         {
             Application.Exit();

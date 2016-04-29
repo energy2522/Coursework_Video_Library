@@ -17,144 +17,60 @@ namespace Video_Library
         {
             InitializeComponent();
         }
-        public string TXT;
+        public int index;//змінна для передачі індексу в comboBox
+        public static List<Film> films;//оголошення списку
+        public string TXT;//поле для рядка
+        //метод, який робить посилання на файл
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            switch (comboBox1.Text)
-            {
-                case "Биографии":
-                    {
-                        TXT = "Biographies.txt";
-                    }
-                    break;
-                case "Боевики":
-                    {
-                        TXT = "Militants.txt";
-                    }
-                    break;
-                case "Вестерны":
-                    {
-                        TXT = "Westerns.txt";
-                    }
-                    break;
-                case "Военные":
-                    {
-                        TXT = "Military.txt";
-                    }
-                    break;
-                case "Детективы":
-                    {
-                        TXT = "Detectives.txt";
-                    }
-                    break;
-                case "Документальные":
-                    {
-                        TXT = "Documentary.txt";
-                    }
-                    break;
-                case "Драмы":
-                    {
-                        TXT = "Drama.txt";
-                    }
-                    break;
-                case "Исторические":
-                    {
-                        TXT = "History.txt";
-                    }
-                    break;
-                case "Комедии":
-                    {
-                        TXT = "Comady.txt";
-                    }
-                    break;
-                case "Криминал":
-                    {
+            List<string> genre = Film.listBox();
+            int ind = comboBox1.SelectedIndex;
 
-                    }
-                    break;
-                case "Мелодрамы":
-                    {
+            TXT = genre[ind] + ".txt";
 
-                    }
-                    break;
-                case "Мультфильмы":
-                    {
-
-                    }
-                    break;
-                case "Мюзиклы":
-                    {
-
-                    }
-                    break;
-                case "Приключения":
-                    {
-
-                    }
-                    break;
-                case "Семейные":
-                    {
-
-                    }
-                    break;
-                case "Спортивные":
-                    {
-
-                    }
-                    break;
-                case "Трилеры":
-                    {
-
-                    }
-                    break;
-                case "Ужасы":
-                    {
-
-                    }
-                    break;
-                case "Фантастика":
-                    {
-
-                    }
-                    break;
-                case "Фэнтези":
-                    {
-
-                    }
-                    break;
-            }
         }
+        //подія нажаття на кнопку
         private void button1_Click(object sender, EventArgs e)
         {
-            if (button1.Text == "Добавить")
-            {
-                StreamWriter write = new StreamWriter(TXT, true);
-                write.WriteLine();
-                write.Write(NameBox.Text + "*" + YearBox.Text + "*" + DirectorBox.Text + "*" + ActorsBox.Text + "*" + TimeBox.Text + "*" + ShortBox.Text + "*" + "\\n");
-                write.Close();
-                NameBox.Text = "";
-                YearBox.Text = "";
-                DirectorBox.Text = "";
-                ActorsBox.Text = "";
-                TimeBox.Text = "";
-                ShortBox.Text = "";
-            }
-            else
-            {
-                Film f = new Film(NameBox.Text, comboBox1.SelectedItem.ToString(), YearBox.Text, DirectorBox.Text, ActorsBox.Text, TimeBox.Text, ShortBox.Text);
-
-                if(Main.films.Contains(f))
+            if (NameBox.Text == "" || TimeBox.Text == "" || YearBox.Text == "" || DirectorBox.Text == "" || ActorsBox.Text == "" || ShortBox.Text == "" || comboBox1.Text == "") { Eror.Text = "не все поля заполены"; }
+            else {
+                Eror.Text = "";
+                if (button1.Text == "Добавить")
                 {
-                    MessageBox.Show("Фильм уже существует", "Ошибка");
-                    return;
+                    StreamWriter write = new StreamWriter(TXT, true);
+                    write.WriteLine();
+                    write.Write(NameBox.Text + "*" + YearBox.Text + "*" + DirectorBox.Text + "*" + ActorsBox.Text + "*" + TimeBox.Text + "*" + ShortBox.Text + "*" + "\\n");
+                    write.Close();
+                    NameBox.Text = "";
+                    YearBox.Text = "";
+                    DirectorBox.Text = "";
+                    ActorsBox.Text = "";
+                    TimeBox.Text = "";
+                    ShortBox.Text = "";
+                    Close();
+
+
+
                 }
+                else
+                {
+                    Film f = new Film(NameBox.Text, comboBox1.SelectedItem.ToString(), YearBox.Text, DirectorBox.Text, ActorsBox.Text, TimeBox.Text, ShortBox.Text);
 
-                Main m = (Main)Owner;
+                    if (Main.films.Contains(f))
+                    {
+                        MessageBox.Show("Фильм уже существует", "Ошибка");
+                        return;
+                    }
 
-                m.ChangeRowOfFilm(f);
-                Close();
+                    Main m = (Main)Owner;
+
+                    m.ChangeRowOfFilm(f);
+                    m.index = comboBox1.SelectedIndex;
+                    Close();
+                }
             }
         }
+        //метод, який виводить в поля данні про фільм
         public void ChangFields(Film film)
         {
             NameBox.Text = film.Name;
@@ -167,6 +83,65 @@ namespace Video_Library
 
             button1.Text = "Изменить";
             this.Text = "Редактировать фильм";
+        }
+
+        private void NameBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            char ch = e.KeyChar;
+            if (Char.IsPunctuation(ch)  || ch=='*' || ch == '\'' || Char.IsSymbol(ch))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void YearBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            char ch = e.KeyChar;
+            if (Char.IsDigit(ch))
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void DirectorBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            char ch = e.KeyChar;
+            if (Char.IsPunctuation(ch) || Char.IsDigit(ch) || Char.IsSeparator(ch) || Char.IsSymbol(ch))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void ActorsBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            char ch = e.KeyChar;
+            if (Char.IsPunctuation(ch) || Char.IsDigit(ch) || Char.IsSeparator(ch) || Char.IsSymbol(ch))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void TimeBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Eror.Text = "";
+            char ch = e.KeyChar;
+            if (Char.IsPunctuation(ch)  || Char.IsSeparator(ch) || Char.IsSymbol(ch))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void ShortBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            char ch = e.KeyChar;
+            if (Char.IsPunctuation(ch) || ch == '*' || ch == '\'' || Char.IsSymbol(ch))
+            {
+                e.Handled = true;
+            }
         }
     }
 }

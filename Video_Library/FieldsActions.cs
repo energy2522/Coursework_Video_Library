@@ -9,6 +9,7 @@ namespace Video_Library
 {
     static class FieldsActions
     {
+        //метод, який конвертує рядок у фільм
         public static Film ConvertRowToFilm(DataGridViewRow row)
         {
             Film f = new Film(row.Cells[0].Value.ToString(), row.Cells[1].Value.ToString(), row.Cells[2].Value.ToString(), row.Cells[3].Value.ToString(),
